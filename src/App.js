@@ -16,7 +16,7 @@ function App() {
     <>
       <Navbar />
       <div className="h-screen flex flex-col">
-        <div className="flex-grow bg-gradient-to-r from-blue-50 to-purple-50 pt-16">
+        <div className="flex-grow bg-gradient-to-r from-green-50 to-emerald-50 pt-16">
           <main className="w-full">
             {/* Hero Section */}
             <motion.section
@@ -27,7 +27,7 @@ function App() {
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.h1
                   variants={fadeIn}
-                  className="text-5xl md:text-6xl font-bold text-purple-700 mb-6"
+                  className="text-5xl md:text-6xl font-bold text-green-700 mb-6"
                 >
                   AI-Powered Skin Disease Detection
                 </motion.h1>
@@ -42,13 +42,13 @@ function App() {
                 <motion.div variants={fadeIn} className="mt-8 space-x-4">
                   <Link
                     to="/predict"
-                    className="inline-block bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
+                    className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-800 transition duration-300 shadow-lg hover:shadow-xl"
                   >
                     Start Diagnosis
                   </Link>
                   <Link
                     to="/about"
-                    className="inline-block bg-white text-purple-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
+                    className="inline-block bg-white text-green-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
                   >
                     Learn More
                   </Link>
@@ -64,7 +64,7 @@ function App() {
               className="py-16 bg-white"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-center text-purple-700 mb-12">
+                <h2 className="text-3xl font-bold text-center text-green-700 mb-12">
                   Why Choose DermAI Assistant?
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -73,9 +73,14 @@ function App() {
                     whileHover={{ scale: 1.05 }}
                     className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
-                    <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <img
+                      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="AI Analysis"
+                      className="w-full h-48 object-cover rounded-lg mb-6"
+                    />
+                    <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                       <svg
-                        className="w-6 h-6 text-purple-700"
+                        className="w-6 h-6 text-green-700"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -88,7 +93,7 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-purple-700 mb-2">
+                    <h3 className="text-xl font-bold text-green-700 mb-2">
                       Instant Analysis
                     </h3>
                     <p className="text-gray-600">
@@ -101,9 +106,14 @@ function App() {
                     whileHover={{ scale: 1.05 }}
                     className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
-                    <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <img
+                      src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Personalized Care"
+                      className="w-full h-48 object-cover rounded-lg mb-6"
+                    />
+                    <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                       <svg
-                        className="w-6 h-6 text-purple-700"
+                        className="w-6 h-6 text-green-700"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -116,7 +126,7 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-purple-700 mb-2">
+                    <h3 className="text-xl font-bold text-green-700 mb-2">
                       Personalized Care
                     </h3>
                     <p className="text-gray-600">
@@ -129,9 +139,14 @@ function App() {
                     whileHover={{ scale: 1.05 }}
                     className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
-                    <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <img
+                      src="https://images.unsplash.com/photo-1576670159147-042c8d530b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="Easy to Use"
+                      className="w-full h-48 object-cover rounded-lg mb-6"
+                    />
+                    <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                       <svg
-                        className="w-6 h-6 text-purple-700"
+                        className="w-6 h-6 text-green-700"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -144,7 +159,7 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-purple-700 mb-2">
+                    <h3 className="text-xl font-bold text-green-700 mb-2">
                       Easy to Use
                     </h3>
                     <p className="text-gray-600">
@@ -158,12 +173,12 @@ function App() {
           </main>
 
           {/* Footer */}
-          <footer className="w-full bg-purple-950 text-white py-12">
+          <footer className="w-full bg-green-950 text-white py-12">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4">DermAI Assistant</h3>
-                  <p className="text-purple-100">
+                  <p className="text-green-100">
                     Advanced skin disease detection powered by artificial
                     intelligence.
                   </p>
@@ -172,14 +187,14 @@ function App() {
                   <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                   <ul className="space-y-2">
                     <li>
-                      <Link to="/" className="text-purple-100 hover:text-white">
+                      <Link to="/" className="text-green-100 hover:text-white">
                         Home
                       </Link>
                     </li>
                     <li>
                       <Link
                         to="/predict"
-                        className="text-purple-100 hover:text-white"
+                        className="text-green-100 hover:text-white"
                       >
                         Diagnose
                       </Link>
@@ -187,7 +202,7 @@ function App() {
                     <li>
                       <Link
                         to="/about"
-                        className="text-purple-100 hover:text-white"
+                        className="text-green-100 hover:text-white"
                       >
                         About
                       </Link>
@@ -200,7 +215,7 @@ function App() {
                     <li>
                       <Link
                         to="/blog"
-                        className="text-purple-100 hover:text-white"
+                        className="text-green-100 hover:text-white"
                       >
                         Blog
                       </Link>
@@ -208,7 +223,7 @@ function App() {
                     <li>
                       <Link
                         to="/faq"
-                        className="text-purple-100 hover:text-white"
+                        className="text-green-100 hover:text-white"
                       >
                         FAQs
                       </Link>
@@ -216,7 +231,7 @@ function App() {
                     <li>
                       <Link
                         to="/support"
-                        className="text-purple-100 hover:text-white"
+                        className="text-green-100 hover:text-white"
                       >
                         Support
                       </Link>
@@ -226,16 +241,17 @@ function App() {
                 <div>
                   <h4 className="text-lg font-semibold mb-4">Contact</h4>
                   <ul className="space-y-2">
-                    <li className="text-purple-100">
-                      Email: contact@dermai.com
+                    <li className="text-green-100">
+                      Email: contact@genhubInnovation.com
                     </li>
-                    <li className="text-purple-100">Phone: (555) 123-4567</li>
+                    <li className="text-green-100">Phone: 6385499454</li>
                   </ul>
                 </div>
               </div>
-              <div className="border-t border-purple-600 mt-8 pt-8 text-center">
-                <p className="text-purple-100">
-                  &copy; 2024 DermAI Assistant. All rights reserved.
+              <div className="border-t border-green-600 mt-8 pt-8 text-center">
+                <p className="text-green-100">
+                  &copy; 2025 Designed and Developed by GenHub Innovations. All
+                  Rights Reserved.
                 </p>
               </div>
             </div>

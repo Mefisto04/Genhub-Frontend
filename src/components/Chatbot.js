@@ -33,7 +33,9 @@ function Chatbot() {
     setIsLoading(true);
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-pro-latest",
+      });
       const prompt = `As a skin care assistant, please provide a helpful response to: ${inputMessage}`;
 
       const result = await model.generateContent(prompt);
