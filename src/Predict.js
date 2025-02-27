@@ -185,35 +185,6 @@ function Predict() {
 
           <div className="bg-white rounded-xl shadow-xl p-6 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-semibold text-green-700 mb-4">
-                  Upload Image
-                </h2>
-                <div className="space-y-4">
-                  <button
-                    onClick={() => setShowCamera(!showCamera)}
-                    className="w-full bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition duration-300"
-                  >
-                    {showCamera ? "Hide Camera" : "Use Camera"}
-                  </button>
-                  <div className="relative">
-                    <input
-                      type="file"
-                      id="file-upload"
-                      onChange={handleFileChange}
-                      className="hidden"
-                      accept="image/*"
-                    />
-                    <label
-                      htmlFor="file-upload"
-                      className="w-full bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition duration-300 cursor-pointer block text-center"
-                    >
-                      Choose File
-                    </label>
-                  </div>
-                </div>
-              </div>
-
               <div className="relative">
                 {showCamera ? (
                   <div className="relative">
@@ -241,6 +212,34 @@ function Predict() {
                     <p className="text-gray-500">No image selected</p>
                   </div>
                 )}
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-green-700 mb-4">
+                  Upload Image
+                </h2>
+                <div className="space-y-4">
+                  <button
+                    onClick={() => setShowCamera(!showCamera)}
+                    className="w-full bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition duration-300"
+                  >
+                    {showCamera ? "Hide Camera" : "Use Camera"}
+                  </button>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="file-upload"
+                      onChange={handleFileChange}
+                      className="hidden"
+                      accept="image/*"
+                    />
+                    <label
+                      htmlFor="file-upload"
+                      className="w-full bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition duration-300 cursor-pointer block text-center"
+                    >
+                      Choose File
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
 
