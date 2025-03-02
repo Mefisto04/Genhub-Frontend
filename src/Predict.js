@@ -167,13 +167,13 @@ function Predict() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex-grow bg-gradient-to-r from-green-50 to-emerald-50 pt-16">
+      <div className="flex-grow bg-gradient-to-r from-purple-50 to-blue-50 pt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-4xl mx-auto px-4 py-8"
         >
-          <h1 className="text-4xl font-bold text-green-700 text-center mb-8">
+          <h1 className="text-4xl font-bold text-purple-700 text-center mb-8">
             Skin Condition Analysis
           </h1>
 
@@ -196,7 +196,7 @@ function Predict() {
                     />
                     <button
                       onClick={captureImage}
-                      className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition duration-300"
+                      className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-800 transition duration-300"
                     >
                       Capture
                     </button>
@@ -214,13 +214,13 @@ function Predict() {
                 )}
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-green-700 mb-4">
+                <h2 className="text-2xl font-semibold text-purple-700 mb-4">
                   Upload Image
                 </h2>
                 <div className="space-y-4">
                   <button
                     onClick={() => setShowCamera(!showCamera)}
-                    className="w-full bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition duration-300"
+                    className="w-full bg-purple-100 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-200 transition duration-300"
                   >
                     {showCamera ? "Hide Camera" : "Use Camera"}
                   </button>
@@ -234,7 +234,7 @@ function Predict() {
                     />
                     <label
                       htmlFor="file-upload"
-                      className="w-full bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition duration-300 cursor-pointer block text-center"
+                      className="w-full bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-800 transition duration-300 cursor-pointer block text-center"
                     >
                       Choose File
                     </label>
@@ -247,10 +247,10 @@ function Predict() {
               <button
                 onClick={handleSubmit}
                 disabled={!file || isLoading}
-                className={`bg-green-700 text-white px-8 py-3 rounded-lg transition duration-300 ${
+                className={`bg-purple-700 text-white px-8 py-3 rounded-lg transition duration-300 ${
                   !file || isLoading
                     ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-green-800"
+                    : "hover:bg-purple-800"
                 }`}
               >
                 {isLoading ? "Analyzing..." : "Analyze Image"}
@@ -267,10 +267,10 @@ function Predict() {
             >
               {prediction && (
                 <div className="mb-8">
-                  <h2 className="text-2xl font-semibold text-green-700 mb-4">
+                  <h2 className="text-2xl font-semibold text-purple-700 mb-4">
                     Diagnosis
                   </h2>
-                  <div className="p-4 bg-green-50 rounded-lg">
+                  <div className="p-4 bg-purple-50 rounded-lg">
                     <p className="text-lg text-gray-700">{prediction}</p>
                   </div>
                 </div>
@@ -278,15 +278,15 @@ function Predict() {
 
               {recommendations && (
                 <div>
-                  <h2 className="text-2xl font-semibold text-green-700 mb-4">
+                  <h2 className="text-2xl font-semibold text-purple-700 mb-4">
                     Recommendations
                   </h2>
-                  <div className="prose prose-green max-w-none">
+                  <div className="prose prose-purple max-w-none">
                     <div className="space-y-4 text-gray-700">
                       <ReactMarkdown
                         components={{
                           h2: ({ children }) => (
-                            <h2 className="text-xl font-semibold text-green-700 mt-6 mb-3">
+                            <h2 className="text-xl font-semibold text-purple-700 mt-6 mb-3">
                               {children}
                             </h2>
                           ),

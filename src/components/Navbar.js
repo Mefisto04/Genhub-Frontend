@@ -23,7 +23,7 @@ function Navbar() {
               className="flex items-center space-x-3"
             >
               <img src="/logo.svg" alt="DermAI Logo" className="w-8 h-8" />
-              <span className="text-xl font-bold text-green-700">
+              <span className="text-xl font-bold text-purple-700">
                 DermAI Assistant
               </span>
             </motion.div>
@@ -35,38 +35,39 @@ function Navbar() {
               to="/"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActiveRoute("/")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                  ? "text-purple-700 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
               }`}
             >
               Home
             </Link>
             <Link
-              to="/predict"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActiveRoute("/predict")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
-              }`}
-            >
-              Diagnose
-            </Link>
-            <Link
               to="/about"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActiveRoute("/about")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                  ? "text-purple-700 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
               }`}
             >
               About
             </Link>
             <Link
+              to="/predict"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActiveRoute("/predict")
+                  ? "text-purple-700 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
+              }`}
+            >
+              Diagnose
+            </Link>
+
+            <Link
               to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActiveRoute("/contact")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                  ? "text-purple-700 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
               }`}
             >
               Contact Us
@@ -77,7 +78,7 @@ function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-green-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-purple-700 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
@@ -104,41 +105,42 @@ function Navbar() {
                 to="/"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActiveRoute("/")
-                    ? "text-green-700 bg-green-50"
-                    : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                    ? "text-purple-700 bg-purple-50"
+                    : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
-              <Link
-                to="/predict"
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isActiveRoute("/predict")
-                    ? "text-green-700 bg-green-50"
-                    : "text-gray-600 hover:text-green-700 hover:bg-green-50"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Diagnose
-              </Link>
+
               <Link
                 to="/about"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActiveRoute("/about")
-                    ? "text-green-700 bg-green-50"
-                    : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                    ? "text-purple-700 bg-purple-50"
+                    : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
+                to="/predict"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActiveRoute("/predict")
+                    ? "text-purple-700 bg-purple-50"
+                    : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Diagnose
+              </Link>
+              <Link
                 to="/contact"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActiveRoute("/contact")
-                    ? "text-green-700 bg-green-50"
-                    : "text-gray-600 hover:text-green-700 hover:bg-green-50"
+                    ? "text-purple-700 bg-purple-50"
+                    : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

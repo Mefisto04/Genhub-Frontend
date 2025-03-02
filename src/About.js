@@ -7,7 +7,7 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-r from-green-50 to-emerald-50">
+      <div className="h-screen bg-gradient-to-r from-purple-50 to-emerald-50">
         {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0 }}
@@ -15,7 +15,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="pt-32 text-center py-16 px-4"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-green-700 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-purple-700 mb-6">
             About DermAI Assistant
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -33,7 +33,7 @@ function About() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-green-700 mb-6">
+              <h2 className="text-3xl font-bold text-purple-700 mb-6">
                 Our Mission
               </h2>
               <p className="text-gray-600 mb-4">
@@ -74,7 +74,7 @@ function About() {
         {/* How It Works Section */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-green-700 text-center mb-12">
+            <h2 className="text-3xl font-bold text-purple-700 text-center mb-12">
               How It Works
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,10 +84,10 @@ function About() {
                 transition={{ delay: 0.3 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-green-700">1</span>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-700">1</span>
                 </div>
-                <h3 className="text-xl font-bold text-green-700 mb-2">
+                <h3 className="text-xl font-bold text-purple-700 mb-2">
                   Upload or Capture
                 </h3>
                 <p className="text-gray-600">
@@ -102,10 +102,10 @@ function About() {
                 transition={{ delay: 0.4 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-green-700">2</span>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-700">2</span>
                 </div>
-                <h3 className="text-xl font-bold text-green-700 mb-2">
+                <h3 className="text-xl font-bold text-purple-700 mb-2">
                   AI Analysis
                 </h3>
                 <p className="text-gray-600">
@@ -120,10 +120,10 @@ function About() {
                 transition={{ delay: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-green-700">3</span>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-700">3</span>
                 </div>
-                <h3 className="text-xl font-bold text-green-700 mb-2">
+                <h3 className="text-xl font-bold text-purple-700 mb-2">
                   Get Recommendations
                 </h3>
                 <p className="text-gray-600">
@@ -143,7 +143,7 @@ function About() {
             transition={{ delay: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl font-bold text-green-700 mb-6">
+            <h2 className="text-3xl font-bold text-purple-700 mb-6">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -152,7 +152,7 @@ function About() {
             </p>
             <Link
               to="/predict"
-              className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-800 transition duration-300 shadow-lg hover:shadow-xl"
+              className="inline-block bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
             >
               Start Your Analysis
             </Link>

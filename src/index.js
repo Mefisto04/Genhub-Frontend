@@ -5,6 +5,7 @@ import App from "./App";
 import Predict from "./Predict";
 import About from "./About";
 import "./index.css";
+import ContactUs from "./components/ContactUs";
 
 // Get the root element
 const container = document.getElementById("root");
@@ -19,6 +20,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/predict" element={<Predict />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<ContactUs />} />
     </Routes>
   </Router>
 );
