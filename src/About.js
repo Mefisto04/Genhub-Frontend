@@ -34,28 +34,30 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-purple-700 mb-6">
-                Our Mission
+                About Us
               </h2>
               <p className="text-gray-600 mb-4">
-                At DermAI Assistant, we're committed to making professional skin
-                disease detection accessible to everyone. Our platform combines
-                advanced artificial intelligence with medical expertise to
-                provide accurate and timely skin condition assessments
+                At GenHub Innovations, our goal is to empower businesses with
+                innovative software solutions, digital transformation
+                strategies, and advanced data analytics. By simplifying
+                complexity and driving sustainable growth, we aim to help our
+                clients excel in an everevolving digital landscape. Through
+                collaboration and cutting-edge technology, we turn ambitions
+                into achievements, shaping a future of possibilities.
               </p>
               <p className="text-gray-600">
-                We believe that early detection and proper guidance are crucial
-                for maintaining skin health. That's why we've developed a
-                user-friendly platform that delivers instant analysis and
-                personalized recommendations, ensuring that users receive the
-                insights they need, when they need them.
+                Our goal is to lead technological advancements, providing
+                solutions that bridge the gap between complexity and efficiency,
+                ultimately making work easier and more impactful for our clients
+                and communities.
               </p>
               <br />
+            
               <p className="text-gray-600">
-                DermAI Assistant is one of the innovative products developed by
-                GenHub Innovations, a company dedicated to creating cutting-edge
-                AI solutions that enhance healthcare and everyday life. Our goal
-                is to leverage technology and innovation to make healthcare
-                smarter, faster, and more accessible for everyone
+                At GenHub Innovations, we are dedicated to delivering
+                transformative, high-quality solutions that help businesses and
+                individuals achieve their goals. By leveraging cutting-edge
+                technology and fostering a culture of collaboration
               </p>
             </div>
             <motion.div
