@@ -125,7 +125,7 @@ function Predict() {
     try {
       // First check if the backend is healthy
       const healthCheck = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/health`
+        `${process.env.REACT_APP_BACKEND_URL.replace(/\/$/, '')}/health`
       );
       if (!healthCheck.ok) {
         throw new Error("Backend service is not available");
