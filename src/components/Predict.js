@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Webcam from "react-webcam";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
-import Navbar from "./components/Navbar";
-import "./index.css";
+import Navbar from "./Navbar";
+import "../index.css";
 
 function Predict() {
   const [file, setFile] = useState(null);
@@ -13,6 +13,7 @@ function Predict() {
   const [isLoading, setIsLoading] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
   const [recommendations, setRecommendations] = useState("");
+  const [predictions, setPredictions] = useState([]);
   const [error, setError] = useState(null);
   const webcamRef = useRef(null);
   const resultsRef = useRef(null);
@@ -143,9 +144,12 @@ function Predict() {
         throw new Error(errorData.error || "Network response was not ok");
       }
 
+      // const data = await response.json();
+      // setPrediction(data.prediction);
+      // await getRecommendations(data.prediction);
       const data = await response.json();
-      setPrediction(data.prediction);
-      await getRecommendations(data.prediction);
+      setPredictions(data.predictions);
+      await getRecommendations(data.predictions[0].label);
     } catch (error) {
       console.error("Error:", error);
       setError(error.message || "Error occurred during prediction");
@@ -258,23 +262,43 @@ function Predict() {
             </div>
           </div>
 
-          {(prediction || recommendations) && (
+          {(predictions.length > 0 || recommendations) && (
             <motion.div
               ref={resultsRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-xl shadow-xl p-6"
             >
-              {prediction && (
-                <div className="mb-8">
-                  <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-                    Diagnosis
-                  </h2>
-                  <div className="p-4 bg-purple-50 rounded-lg">
-                    <p className="text-lg text-gray-700">{prediction}</p>
+              <h2 className="text-2xl font-semibold text-purple-700 mb-4">
+                Diagnosis Results
+              </h2>
+
+              {predictions.map((prediction, index) => (
+                <div key={index} className="mb-6">
+                  <div className="p-4 bg-purple-50 rounded-lg mb-3">
+                    <h3 className="text-lg font-semibold text-purple-700">
+                      {index + 1}. {prediction.label}
+                      <span className="text-gray-600 ml-2">
+                        ({(prediction.confidence * 100).toFixed(1)}% confidence)
+                      </span>
+                    </h3>
+                    {index === 0 && (
+                      <div className="mt-2">
+                        <p className="text-sm font-medium text-gray-600">
+                          Possible subconditions:
+                        </p>
+                        <ul className="list-disc pl-6 mt-1">
+                          {prediction.subcategories.map((sub, idx) => (
+                            <li key={idx} className="text-sm text-gray-700">
+                              {sub}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
-              )}
+              ))}
 
               {recommendations && (
                 <div>

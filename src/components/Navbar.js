@@ -1,14 +1,24 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { toast } from 'react-toastify';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user') || 'null');
 
   const isActiveRoute = (path) => {
     return location.pathname === path;
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('user');
+    toast.success('Logged out successfully');
+    navigate('/login');
   };
 
   return (
@@ -87,6 +97,33 @@ function Navbar() {
                 <Menu className="block h-6 w-6" aria-hidden="true" />
               )}
             </button>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-4 flex items-center md:ml-6">
+              {user ? (
+                <div className="flex items-center">
+                  <span className="text-gray-700 mr-2">Hello, {user.name}</span>
+                  {user.role === 'admin' && (
+                    <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mr-2">
+                      Admin
+                    </span>
+                  )}
+                  <button
+                    onClick={handleLogout}
+                    className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <div className="flex space-x-4">
+                  <Link to="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
+                  <Link to="/register" className="bg-violet-700 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -1,26 +1,23 @@
 import React from "react";
-import { createRoot } from "react-dom/client"; // Import createRoot
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from "./App";
-import Predict from "./Predict";
-import About from "./About";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-import ContactUs from "./components/ContactUs";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Get the root element
 const container = document.getElementById("root");
 
 // Create a root
-const root = createRoot(container);
+const root = ReactDOM.createRoot(container);
 
 // Render the app
 root.render(
-  <Router>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/predict" element={<Predict />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<ContactUs />} />
-    </Routes>
-  </Router>
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+      <ToastContainer position="top-right" autoClose={5000} />
+    </BrowserRouter>
+  </React.StrictMode>
 );
