@@ -4,13 +4,17 @@ import { Link, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Chatbot from "./components/Chatbot";
 import "./index.css";
-import Login from './components/Login';
-import Register from './components/Register';
-import ProtectedRoute from './components/ProtectedRoute';
-import Dashboard from './components/Dashboard';
-import Predict from './components/Predict';
-import About from './components/About';
-import ContactUs from './components/ContactUs';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Dashboard from "./components/Dashboard";
+import Predict from "./components/Predict";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
+import Blog from "./components/Blog";
+import BlogDetail from "./components/BlogDetail";
+import BlogCreate from "./components/BlogCreate";
+import BlogEdit from "./components/BlogEdit";
 
 function App() {
   const fadeIn = {
@@ -37,13 +41,9 @@ function App() {
             >
               AI-Powered Skin Disease Detection
             </motion.h1>
-            <motion.p
-              variants={fadeIn}
-              className="mt-4 text-xl text-gray-600"
-            >
-              Get instant, accurate skin condition analysis powered by
-              advanced AI. Upload an image or use your camera for
-              real-time detection.
+            <motion.p variants={fadeIn} className="mt-4 text-xl text-gray-600">
+              Get instant, accurate skin condition analysis powered by advanced
+              AI. Upload an image or use your camera for real-time detection.
             </motion.p>
             <motion.div variants={fadeIn} className="mt-8 space-x-4">
               <Link
@@ -179,8 +179,7 @@ function App() {
                 Easy to Use
               </h3>
               <p className="text-gray-600">
-                Simple interface for uploading images or using your
-                camera.
+                Simple interface for uploading images or using your camera.
               </p>
             </motion.div>
           </div>
@@ -198,19 +197,55 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } />
-            
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+
             <Route path="/predict" element={<Predict />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/forgot-password" element={<div className="min-h-screen pt-24 px-4">Password reset coming soon</div>} />
-            <Route path="*" element={<div className="min-h-screen pt-24 px-4">Page not found</div>} />
+
+            {/* Blog Routes */}
+            <Route
+              path="/blog/create"
+              element={
+                <ProtectedRoute>
+                  <BlogCreate />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/blog/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <BlogEdit />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/blog" element={<Blog />} />
+
+            <Route
+              path="/forgot-password"
+              element={
+                <div className="min-h-screen pt-24 px-4">
+                  Password reset coming soon
+                </div>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <div className="min-h-screen pt-24 px-4">Page not found</div>
+              }
+            />
           </Routes>
-          
+
           {/* Footer */}
           <footer className="w-full bg-purple-950 text-white py-12">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

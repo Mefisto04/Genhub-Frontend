@@ -2,23 +2,24 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user') || 'null');
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+  const isAdmin = user && user.role === "admin";
 
   const isActiveRoute = (path) => {
     return location.pathname === path;
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('user');
-    toast.success('Logged out successfully');
-    navigate('/login');
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    toast.success("Logged out successfully");
+    navigate("/login");
   };
 
   return (
@@ -71,7 +72,16 @@ function Navbar() {
             >
               Diagnose
             </Link>
-
+            <Link
+              to="/blog"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname.startsWith("/blog")
+                  ? "text-purple-700 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
+              }`}
+            >
+              Blog
+            </Link>
             <Link
               to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -105,10 +115,18 @@ function Navbar() {
               {user ? (
                 <div className="flex items-center">
                   <span className="text-gray-700 mr-2">Hello, {user.name}</span>
-                  {user.role === 'admin' && (
-                    <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mr-2">
-                      Admin
-                    </span>
+                  {isAdmin && (
+                    <>
+                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mr-2">
+                        Admin
+                      </span>
+                      <Link
+                        to="/blog/create"
+                        className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium mr-2"
+                      >
+                        New Blog Post
+                      </Link>
+                    </>
                   )}
                   <button
                     onClick={handleLogout}
@@ -119,8 +137,18 @@ function Navbar() {
                 </div>
               ) : (
                 <div className="flex space-x-4">
-                  <Link to="/login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
-                  <Link to="/register" className="bg-violet-700 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
+                  <Link
+                    to="/login"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/register"
+                    className="bg-violet-700 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Register
+                  </Link>
                 </div>
               )}
             </div>
@@ -173,6 +201,17 @@ function Navbar() {
                 Diagnose
               </Link>
               <Link
+                to="/blog"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  location.pathname.startsWith("/blog")
+                    ? "text-purple-700 bg-purple-50"
+                    : "text-gray-600 hover:text-purple-700 hover:bg-purple-50"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
                 to="/contact"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActiveRoute("/contact")
@@ -183,6 +222,28 @@ function Navbar() {
               >
                 Contact Us
               </Link>
+
+              {isAdmin && (
+                <Link
+                  to="/blog/create"
+                  className="block px-3 py-2 rounded-md text-base font-medium bg-green-600 text-white hover:bg-green-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  New Blog Post
+                </Link>
+              )}
+
+              {user && (
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-red-600 text-white hover:bg-red-700"
+                >
+                  Logout
+                </button>
+              )}
             </div>
           </motion.div>
         )}
