@@ -151,7 +151,7 @@ function About() {
             >
               <div className="h-[22rem] overflow-hidden">
                 <img
-                  src="/chenthura-1.png"
+                  src="https://via.placeholder.com/400x600?text=Team+Member"
                   alt="Team Member 1"
                   className="w-full h-full object-top "
                 />

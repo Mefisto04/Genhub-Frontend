@@ -60,7 +60,6 @@ const Blog = () => {
       <h1 className="text-4xl font-bold text-center text-purple-700 mb-12">
         Blog Posts
       </h1>
-
       {posts.length === 0 ? (
         <div className="text-center py-10">
           <p className="text-lg text-gray-500">No blog posts available yet.</p>
