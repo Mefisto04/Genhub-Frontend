@@ -12,32 +12,33 @@ const BlogDetail = () => {
   const isAdmin = user && user.role === "admin";
 
   useEffect(() => {
-    fetchPost();
-  }, [id]);
+    // Define fetchPost inside useEffect to avoid dependency issues
+    const fetchPost = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `${
+            process.env.REACT_APP_API_URL || "http://localhost:5000"
+          }/blog/posts/${id}`
+        );
 
-  const fetchPost = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(
-        `${
-          process.env.REACT_APP_API_URL || "http://localhost:5000"
-        }/blog/posts/${id}`
-      );
-
-      if (response.data.success) {
-        setPost(response.data.post);
-      } else {
-        toast.error("Failed to fetch blog post");
+        if (response.data.success) {
+          setPost(response.data.post);
+        } else {
+          toast.error("Failed to fetch blog post");
+          navigate("/blog");
+        }
+      } catch (error) {
+        toast.error("Error fetching blog post");
+        console.error("Error fetching blog post:", error);
         navigate("/blog");
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      toast.error("Error fetching blog post");
-      console.error("Error fetching blog post:", error);
-      navigate("/blog");
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
+
+    fetchPost();
+  }, [id, navigate]);
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this post?")) {

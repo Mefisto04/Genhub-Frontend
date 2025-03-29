@@ -8,7 +8,7 @@ import "../index.css";
 
 function Predict() {
   const [file, setFile] = useState(null);
-  const [prediction, setPrediction] = useState("");
+  // const [prediction, setPrediction] = useState("");
   const [imagePreview, setImagePreview] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
@@ -20,10 +20,10 @@ function Predict() {
 
   // Add scroll to results when they're available
   useEffect(() => {
-    if ((prediction || recommendations) && resultsRef.current) {
+    if ((predictions.length > 0 || recommendations) && resultsRef.current) {
       resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }, [prediction, recommendations]);
+  }, [predictions, recommendations]); // Changed from [prediction, recommendations]
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -119,13 +119,15 @@ function Predict() {
 
     setIsLoading(true);
     setError(null);
+    setPredictions([]); // Reset predictions
+    setRecommendations(""); // Reset recommendations
     const formData = new FormData();
     formData.append("file", file);
 
     try {
       // First check if the backend is healthy
       const healthCheck = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL.replace(/\/$/, '')}/health`
+        `${process.env.REACT_APP_BACKEND_URL.replace(/\/$/, "")}/health`
       );
       if (!healthCheck.ok) {
         throw new Error("Backend service is not available");
@@ -144,16 +146,23 @@ function Predict() {
         throw new Error(errorData.error || "Network response was not ok");
       }
 
-      // const data = await response.json();
-      // setPrediction(data.prediction);
-      // await getRecommendations(data.prediction);
       const data = await response.json();
-      setPredictions(data.predictions);
-      await getRecommendations(data.predictions[0].label);
+
+      // Ensure predictions is always an array
+      const receivedPredictions = Array.isArray(data.predictions)
+        ? data.predictions
+        : [];
+
+      setPredictions(receivedPredictions);
+
+      // Only get recommendations if we have predictions
+      if (receivedPredictions.length > 0) {
+        await getRecommendations(receivedPredictions[0].label);
+      }
     } catch (error) {
       console.error("Error:", error);
       setError(error.message || "Error occurred during prediction");
-      setPrediction("");
+      setPredictions([]);
       setRecommendations("");
     } finally {
       setIsLoading(false);
@@ -282,13 +291,13 @@ function Predict() {
                         ({(prediction.confidence * 100).toFixed(1)}% confidence)
                       </span>
                     </h3>
-                    {index === 0 && (
+                    {index === 0 && prediction.subcategories && (
                       <div className="mt-2">
                         <p className="text-sm font-medium text-gray-600">
                           Possible subconditions:
                         </p>
                         <ul className="list-disc pl-6 mt-1">
-                          {prediction.subcategories.map((sub, idx) => (
+                          {prediction.subcategories?.map((sub, idx) => (
                             <li key={idx} className="text-sm text-gray-700">
                               {sub}
                             </li>

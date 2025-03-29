@@ -49,14 +49,14 @@ const Blog = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-24 flex justify-center">
+      <div className="h-screen pt-24 flex justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen pt-24 px-4 max-w-7xl mx-auto">
+    <div className="h-screen pt-24 px-4 max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold text-center text-purple-700 mb-12">
         Blog Posts
       </h1>

@@ -27,42 +27,43 @@ const BlogEdit = () => {
       return;
     }
 
+    // Define fetchPost inside useEffect to avoid dependency issues
+    const fetchPost = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `${
+            process.env.REACT_APP_API_URL || "http://localhost:5000"
+          }/blog/posts/${id}`
+        );
+
+        if (response.data.success) {
+          const post = response.data.post;
+          setFormData({
+            title: post.title,
+            content: post.content,
+            image: null,
+          });
+
+          // Set image preview if exists
+          if (post.image_data) {
+            setImagePreview(post.image_data);
+          }
+        } else {
+          toast.error("Failed to fetch blog post");
+          navigate("/blog");
+        }
+      } catch (error) {
+        toast.error("Error fetching blog post");
+        console.error("Error fetching blog post:", error);
+        navigate("/blog");
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchPost();
   }, [id, isAdmin, navigate]);
-
-  const fetchPost = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(
-        `${
-          process.env.REACT_APP_API_URL || "http://localhost:5000"
-        }/blog/posts/${id}`
-      );
-
-      if (response.data.success) {
-        const post = response.data.post;
-        setFormData({
-          title: post.title,
-          content: post.content,
-          image: null,
-        });
-
-        // Set image preview if exists
-        if (post.image_data) {
-          setImagePreview(post.image_data);
-        }
-      } else {
-        toast.error("Failed to fetch blog post");
-        navigate("/blog");
-      }
-    } catch (error) {
-      toast.error("Error fetching blog post");
-      console.error("Error fetching blog post:", error);
-      navigate("/blog");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
