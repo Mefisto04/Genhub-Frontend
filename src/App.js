@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
 import "./index.css";
 import Login from "./components/Login";
@@ -25,12 +26,12 @@ function App() {
 
   // Home page content component
   const HomePage = () => (
-    <main className="w-full">
+    <main className="w-full pt-10">
       {/* Hero Section */}
       <motion.section
         initial="initial"
         animate="animate"
-        className="pt-20 pb-20 h-screen flex items-center justify-center"
+        className="pt-20 pb-20 min-h-[calc(100vh-5rem)] flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
           {/* Left: Text Content */}
@@ -156,7 +157,7 @@ function App() {
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <img
-                src="https://images.unsplash.com/photo-1576670159147-042c8d530b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Easy to Use"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
@@ -191,8 +192,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="h-screen flex flex-col">
-        <div className="flex-grow bg-gradient-to-r from-blue-50 to-purple-50 pt-16">
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow bg-gradient-to-r from-blue-50 to-purple-50 main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
@@ -233,7 +234,7 @@ function App() {
             <Route
               path="/forgot-password"
               element={
-                <div className="min-h-screen pt-24 px-4">
+                <div className="min-h-screen px-4 main-content">
                   Password reset coming soon
                 </div>
               }
@@ -241,96 +242,14 @@ function App() {
             <Route
               path="*"
               element={
-                <div className="min-h-screen pt-24 px-4">Page not found</div>
+                <div className="min-h-screen px-4 main-content">
+                  Page not found
+                </div>
               }
             />
           </Routes>
-
-          {/* Footer */}
-          <footer className="w-full bg-purple-950 text-white py-12">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                  <h3 className="text-xl font-bold mb-4">DermAI Assistant</h3>
-                  <p className="text-purple-100">
-                    Advanced skin disease detection powered by artificial
-                    intelligence.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link to="/" className="text-purple-100 hover:text-white">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/predict"
-                        className="text-purple-100 hover:text-white"
-                      >
-                        Diagnose
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/about"
-                        className="text-purple-100 hover:text-white"
-                      >
-                        About
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Resources</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link
-                        to="/blog"
-                        className="text-purple-100 hover:text-white"
-                      >
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/faq"
-                        className="text-purple-100 hover:text-white"
-                      >
-                        FAQs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/support"
-                        className="text-purple-100 hover:text-white"
-                      >
-                        Support
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Contact</h4>
-                  <ul className="space-y-2">
-                    <li className="text-purple-100">
-                      Email: contact@genhubInnovation.com
-                    </li>
-                    <li className="text-purple-100">Phone: +91 6385499454</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="border-t border-purple-600 mt-8 pt-8 text-center">
-                <p className="text-purple-100">
-                  &copy; 2025 Designed and Developed by GenHub Innovations. All
-                  Rights Reserved.
-                </p>
-              </div>
-            </div>
-          </footer>
         </div>
+        <Footer />
       </div>
       <Chatbot />
     </>

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Webcam from "react-webcam";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
-import Navbar from "./Navbar";
 import "../index.css";
 
 function Predict() {
@@ -178,9 +177,8 @@ function Predict() {
   };
 
   return (
-    <div className="h-screen flex flex-col">
-      <Navbar />
-      <div className="flex-grow bg-gradient-to-r from-purple-50 to-blue-50 pt-16">
+    <div className="flex flex-col">
+      <div className="flex-grow bg-gradient-to-r from-purple-50 to-blue-50 page-wrapper">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

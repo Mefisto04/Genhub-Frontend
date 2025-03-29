@@ -70,7 +70,7 @@ const BlogDetail = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-24 flex justify-center">
+      <div className="min-h-[50vh] flex justify-center items-center page-wrapper">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
       </div>
     );
@@ -78,7 +78,7 @@ const BlogDetail = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen pt-24 px-4 max-w-4xl mx-auto text-center">
+      <div className="min-h-[80vh] px-4 w-full max-w-[90%] lg:max-w-[1400px] mx-auto page-wrapper text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Post Not Found
         </h1>
@@ -87,7 +87,7 @@ const BlogDetail = () => {
         </p>
         <Link
           to="/blog"
-          className="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
+          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300"
         >
           Back to Blog
         </Link>
@@ -96,15 +96,15 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-[80vh] px-4 page-wrapper">
+      <div className="w-full max-w-[90%] lg:max-w-[1200px] mx-auto">
         <div className="mb-8">
           <Link
             to="/blog"
             className="text-purple-600 hover:text-purple-800 transition flex items-center"
           >
             <svg
-              className="w-4 h-4 mr-2"
+              className="w-5 h-5 mr-2"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -118,9 +118,9 @@ const BlogDetail = () => {
           </Link>
         </div>
 
-        <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+        <article className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all hover:shadow-xl">
           {post.image_data && (
-            <div className="w-full h-96 overflow-hidden">
+            <div className="w-full h-[400px] overflow-hidden">
               <img
                 src={post.image_data}
                 alt={post.title}
@@ -128,30 +128,30 @@ const BlogDetail = () => {
               />
             </div>
           )}
-          <div className="p-8">
+          <div className="p-10">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">
               {post.title}
             </h1>
-            <div className="flex items-center text-gray-500 mb-6">
+            <div className="flex items-center text-gray-500 mb-8">
               <span>{formatDate(post.created_at)}</span>
               <span className="mx-2">•</span>
               <span>By {post.author_name}</span>
             </div>
-            <div className="prose max-w-none text-gray-600 whitespace-pre-line">
+            <div className="prose max-w-none lg:prose-lg text-gray-600 whitespace-pre-line">
               {post.content}
             </div>
 
             {isAdmin && (
-              <div className="mt-8 flex space-x-4">
+              <div className="mt-10 flex space-x-4">
                 <Link
                   to={`/blog/edit/${post._id}`}
-                  className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
                 >
                   Edit Post
                 </Link>
                 <button
                   onClick={handleDelete}
-                  className="inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+                  className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition duration-300"
                 >
                   Delete Post
                 </button>

@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { toast } from "react-toastify";
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "null");
   const isAdmin = user && user.role === "admin";
+
+  // Add state for tracking scroll
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  // Handle scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      // Always visible at the top of the page
+      if (currentScrollPos < 50) {
+        setVisible(true);
+        setPrevScrollPos(currentScrollPos);
+        return;
+      }
+
+      // Determine scroll direction
+      const isScrollingDown = prevScrollPos < currentScrollPos;
+
+      // Only update visibility after scrolling a bit (to avoid small movements)
+      if (Math.abs(prevScrollPos - currentScrollPos) > 10) {
+        setVisible(!isScrollingDown);
+        setPrevScrollPos(currentScrollPos);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   const isActiveRoute = (path) => {
     return location.pathname === path;
@@ -23,7 +53,12 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md h-16"
+      initial={{ y: 0 }}
+      animate={{ y: visible ? 0 : "-100%" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -248,7 +283,7 @@ function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -148,22 +148,41 @@ const BlogEdit = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-24 flex justify-center">
+      <div className="min-h-[50vh] flex justify-center items-center page-wrapper">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
       </div>
     );
   }
 
+  if (!formData.title) {
+    return (
+      <div className="min-h-[80vh] px-4 w-full max-w-[90%] lg:max-w-[1400px] mx-auto page-wrapper text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          Post Not Found
+        </h1>
+        <p className="mb-6">
+          The blog post you're trying to edit doesn't exist or has been removed.
+        </p>
+        <Link
+          to="/blog"
+          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300"
+        >
+          Back to Blog
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen pt-24 px-4">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-[80vh] px-4 page-wrapper">
+      <div className="w-full max-w-[90%] lg:max-w-[1200px] mx-auto">
         <h1 className="text-3xl font-bold text-center text-purple-700 mb-8">
           Edit Blog Post
         </h1>
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 p-8"
+          className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 p-10"
         >
           <div className="mb-6">
             <label
