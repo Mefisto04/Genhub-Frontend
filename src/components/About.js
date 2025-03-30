@@ -31,30 +31,52 @@ function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold text-purple-700 mb-6">
-              About Us
+              About Us – Derm-AI by GenHub Innovations
             </h2>
             <p className="text-gray-600 mb-4">
-              At GenHub Innovations, our goal is to empower businesses with
-              innovative software solutions, digital transformation strategies,
-              and advanced data analytics. By simplifying complexity and driving
-              sustainable growth, we aim to help our clients excel in an
-              everevolving digital landscape. Through collaboration and
-              cutting-edge technology, we turn ambitions into achievements,
-              shaping a future of possibilities.
+              At <span className="font-bold">GenHub Innovations</span>, we are
+              dedicated to revolutionizing healthcare through AI-driven
+              solutions. With a commitment to{" "}
+              <span className="font-bold">
+                innovation, digital transformation, and advanced data analytics
+              </span>
+              , we strive to empower businesses and individuals with
+              cutting-edge technology. Our goal is to bridge the gap between
+              complexity and efficiency, making work easier and more impactful
+              while shaping a future of possibilities.
             </p>
             <p className="text-gray-600">
-              Our goal is to lead technological advancements, providing
-              solutions that bridge the gap between complexity and efficiency,
-              ultimately making work easier and more impactful for our clients
-              and communities.
+              <span className="font-bold">Derm-AI</span> is a testament to this
+              vision—an AI-powered skin disease prediction system designed to
+              enhance dermatological care. Skin conditions affect millions
+              worldwide, often requiring early detection for effective
+              treatment. However, access to specialists can be limited,
+              particularly in remote areas. Derm-AI simplifies this challenge by
+              leveraging{" "}
+              <span className="font-bold">
+                Convolutional Neural Networks (CNNs)
+              </span>{" "}
+              to analyze skin images and provide diagnostic insights, assisting
+              both medical professionals and individuals seeking preliminary
+              assessments.
             </p>
             <br />
 
             <p className="text-gray-600">
-              At GenHub Innovations, we are dedicated to delivering
-              transformative, high-quality solutions that help businesses and
-              individuals achieve their goals. By leveraging cutting-edge
-              technology and fostering a culture of collaboration
+              At <span className="font-bold">GenHub Innovations</span>, we
+              believe in{" "}
+              <span className="font-bold">
+                delivering transformative, high-quality solutions
+              </span>{" "}
+              that drive sustainable growth. Derm-AI aligns with the broader
+              vision of digital health transformation, promoting early
+              intervention, improving healthcare accessibility, and empowering
+              individuals with AI-driven insights. Through{" "}
+              <span className="font-bold">
+                collaboration and cutting-edge technology
+              </span>
+              , we turn ambitions into achievements, shaping a smarter and
+              healthier future.
             </p>
           </div>
           <motion.div
