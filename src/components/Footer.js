@@ -65,7 +65,15 @@ function Footer() {
               <li className="text-purple-100">
                 Email: contact@genhubInnovation.com
               </li>
-              <li className="text-purple-100">Phone: +91 6385499454</li>
+              <li className="text-purple-100">
+                <div className="text-purple-100 flex gap-2">
+                  <div>Phone:</div>
+                  <div className="flex flex-col">
+                    <div>+91 6385499454</div>
+                    <div>+91 6385282033</div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
