@@ -74,7 +74,11 @@ function Footer() {
             &copy; 2025 DermAI Assistant - All Rights Reserved.
           </p>
           <p className="text-purple-100">
-            Designed and Developed by GenHub Innovations.
+            Designed and Developed by{" "}
+            <span>
+              <a href="https://genhubinnovations.com">GenHub Innovations</a>
+            </span>
+            .
           </p>
         </div>
       </div>

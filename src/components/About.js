@@ -158,9 +158,8 @@ function About() {
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold text-purple-700">
-                  Chenthura Arunesh
+                  Chenthura Arunesh B
                 </h3>
-                <p className="text-gray-600 mb-4">CEO & Co-founder</p>
                 <a
                   href="http://www.linkedin.com/in/chenthura-arunesh-ab2034283"
                   target="_blank"
@@ -168,7 +167,7 @@ function About() {
                   className="inline-block text-blue-600 hover:text-blue-800"
                 >
                   <svg
-                    className="w-6 h-6 mx-auto"
+                    className="w-6 h-6 mx-auto mt-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -198,12 +197,11 @@ function About() {
                 <h3 className="text-2xl font-bold text-purple-700">
                   Dhivya R G
                 </h3>
-                <p className="text-gray-600 mb-4">CTO & Lead Developer</p>
                 <a
                   href="https://www.linkedin.com/in/dhivya-r-g-28046725b"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-blue-600 hover:text-blue-800"
+                  className="inline-block text-blue-600 hover:text-blue-800 mt-4"
                 >
                   <svg
                     className="w-6 h-6 mx-auto"
@@ -233,13 +231,14 @@ function About() {
                 />
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-purple-700">Rahul</h3>
-                <p className="text-gray-600 mb-4">AI Research Specialist</p>
+                <h3 className="text-2xl font-bold text-purple-700">
+                  Rahul Kannan
+                </h3>
                 <a
                   href="http://www.linkedin.com/in/rk0784"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-blue-600 hover:text-blue-800"
+                  className="inline-block text-blue-600 hover:text-blue-800 mt-4"
                 >
                   <svg
                     className="w-6 h-6 mx-auto"
