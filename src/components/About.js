@@ -149,9 +149,9 @@ function About() {
               whileHover={{ y: -10 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="h-[22rem] overflow-hidden">
+              <div className="h-[24rem] overflow-hidden">
                 <img
-                  src="https://via.placeholder.com/400x600?text=Team+Member"
+                  src="/chanthura.png"
                   alt="Team Member 1"
                   className="w-full h-full object-top "
                 />
@@ -187,7 +187,7 @@ function About() {
               whileHover={{ y: -10 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="h-[22rem] overflow-hidden">
+              <div className="h-[24rem] overflow-hidden">
                 <img
                   src="/divya.png"
                   alt="Team Member 2"
@@ -225,7 +225,7 @@ function About() {
               whileHover={{ y: -10 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="h-[22rem] overflow-hidden">
+              <div className="h-[24rem] overflow-hidden">
                 <img
                   src="/rahul.png"
                   alt="Team Member 3"

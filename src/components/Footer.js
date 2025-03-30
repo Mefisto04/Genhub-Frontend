@@ -69,8 +69,8 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-purple-600 mt-8 pt-8 flex justify-between text-center">
-          <p className="text-purple-100">
+        <div className="border-t border-purple-600 mt-8 pt-8 flex flex-col md:flex-row justify-between text-center">
+          <p className="text-purple-100 mb-2 md:mb-0">
             &copy; 2025 DermAI Assistant - All Rights Reserved.
           </p>
           <p className="text-purple-100">
