@@ -66,14 +66,14 @@ const Blog = () => {
         </div>
       ) : (
         <>
-          <div className="space-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentPosts.map((post) => (
               <div
                 key={post._id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all hover:shadow-xl"
+                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all hover:shadow-xl h-full flex flex-col"
               >
                 {post.image_data && (
-                  <div className="w-full h-80 overflow-hidden">
+                  <div className="w-full h-56 overflow-hidden">
                     <img
                       src={post.image_data}
                       alt={post.title}
@@ -81,14 +81,14 @@ const Blog = () => {
                     />
                   </div>
                 )}
-                <div className="p-8">
+                <div className="p-6 flex-grow flex flex-col">
                   <p className="text-sm text-gray-500 mb-2">
                     {formatDate(post.created_at)} • By {post.author_name}
                   </p>
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                  <h2 className="text-xl font-bold text-gray-800 mb-3">
                     {post.title}
                   </h2>
-                  <div className="prose max-w-none text-gray-600 mb-6">
+                  <div className="prose max-w-none text-gray-600 mb-4 flex-grow">
                     {/* Show a preview of the content (first 250 characters) */}
                     {post.content.length > 250
                       ? `${post.content.substring(0, 250)}...`
@@ -96,7 +96,7 @@ const Blog = () => {
                   </div>
                   <Link
                     to={`/blog/${post._id}`}
-                    className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300"
+                    className="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition duration-300 mt-auto"
                   >
                     Read More
                   </Link>

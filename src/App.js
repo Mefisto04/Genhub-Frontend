@@ -33,42 +33,66 @@ function App() {
         animate="animate"
         className="pt-20 pb-20 min-h-[calc(100vh-5rem)] flex items-center justify-center"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col  items-center justify-between">
           {/* Left: Text Content */}
-          <div className="max-w-2xl text-center lg:text-left">
-            <motion.h1
-              variants={fadeIn}
-              className="text-5xl md:text-6xl font-bold text-purple-700 mb-6"
-            >
-              AI-Powered Skin Disease Detection
-            </motion.h1>
-            <motion.p variants={fadeIn} className="mt-4 text-xl text-gray-600">
-              Get instant, accurate skin condition analysis powered by advanced
-              AI. Upload an image or use your camera for real-time detection.
-            </motion.p>
-            <motion.div variants={fadeIn} className="mt-8 space-x-4">
-              <Link
-                to="/predict"
-                className="inline-block bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+            <div className="max-w-2xl text-center lg:text-left">
+              <motion.h1
+                variants={fadeIn}
+                className="text-5xl md:text-6xl font-bold text-purple-700 mb-6"
               >
-                Start Diagnosis
-              </Link>
-              <Link
-                to="/about"
-                className="inline-block bg-white text-purple-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
+                AI-Powered Skin Disease Detection
+              </motion.h1>
+              <motion.p
+                variants={fadeIn}
+                className="mt-4 text-xl text-gray-600"
               >
-                Learn More
-              </Link>
-            </motion.div>
-          </div>
+                Get instant, accurate skin condition analysis powered by
+                advanced AI. Upload an image or use your camera for real-time
+                detection.
+              </motion.p>
+              <motion.div variants={fadeIn} className="mt-8 space-x-4">
+                <Link
+                  to="/predict"
+                  className="inline-block bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Start Diagnosis
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-block bg-white text-purple-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
+            </div>
 
-          {/* Right: Image */}
-          <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
-            <img
-              src="/contactus.jpg"
-              alt="AI Skin Analysis"
-              className="w-full max-w-md rounded-lg shadow-lg"
-            />
+            {/* Right: Image */}
+            <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
+              <img
+                src="/contactus.jpg"
+                alt="AI Skin Analysis"
+                className="w-full max-w-md rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+            <motion.div
+              variants={fadeIn}
+              className="mt-10 text-lg text-gray-600"
+            >
+              <p>
+                Our platform offers a comprehensive analysis of various skin
+                conditions, ensuring you receive the best possible care. With
+                our user-friendly interface, you can easily navigate through the
+                features and get the information you need.
+              </p>
+              <p className="mt-4">
+                Join our community of users who are taking proactive steps
+                towards better skin health. Stay informed with the latest
+                updates and tips from dermatology experts.
+              </p>
+            </motion.div>
           </div>
         </div>
       </motion.section>

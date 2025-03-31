@@ -19,7 +19,7 @@ body {
 .main-content {
   padding-top: 5rem; /* Space for navbar */
   min-height: calc(100vh - 5rem);
-  /* margin-top: 0.1rem; Small additional margin */
+  margin-top: -5rem;
   display: flex;
   flex-direction: column;
 }
@@ -29,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 10rem); /* Account for navbar and footer */
+  min-height: calc(100vh - 10rem); 
   padding: 2rem 0;
 }
 

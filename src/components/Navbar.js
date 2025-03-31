@@ -76,7 +76,7 @@ function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-8 ml-auto">
             <Link
               to="/"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -174,7 +174,7 @@ function Navbar() {
                 <div className="flex space-x-4">
                   <Link
                     to="/login"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="bg-violet-700 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Login
                   </Link>
