@@ -184,7 +184,7 @@ function Predict() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-4xl mx-auto px-4 py-8"
         >
-          <h1 className="text-4xl font-bold text-purple-700 text-center mb-8">
+          <h1 className="text-4xl font-bold text-purple-700 text-center mb-8 mt-10 lg:mt-0">
             Skin Condition Analysis
           </h1>
 

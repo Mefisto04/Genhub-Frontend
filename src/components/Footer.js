@@ -81,9 +81,18 @@ function Footer() {
           <p className="text-purple-100 mb-2 md:mb-0">
             &copy; 2025 DermAI Assistant - All Rights Reserved.
           </p>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            {/* Privacy Policy */}
+            <Link
+              to="/privacy-policy"
+              className=" mt-4 md:mt-0 md:ml-4"
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <p className="text-purple-100">
             Designed and Developed by{" "}
-            <span>
+            <span className="">
               <a href="https://genhubinnovations.com">GenHub Innovations</a>
             </span>
             .

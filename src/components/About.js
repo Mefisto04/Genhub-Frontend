@@ -26,7 +26,7 @@ function About() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="max-w-7xl mx-auto px-4 py-16"
+        className="max-w-7xl mx-auto px-4"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

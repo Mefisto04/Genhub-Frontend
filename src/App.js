@@ -16,6 +16,7 @@ import Blog from "./components/Blog";
 import BlogDetail from "./components/BlogDetail";
 import BlogCreate from "./components/BlogCreate";
 import BlogEdit from "./components/BlogEdit";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
   const fadeIn = {
@@ -51,16 +52,19 @@ function App() {
                 advanced AI. Upload an image or use your camera for real-time
                 detection.
               </motion.p>
-              <motion.div variants={fadeIn} className="mt-8 space-x-4">
+              <motion.div
+                variants={fadeIn}
+                className="mt-8 space-y-4 space-x-0 md:space-x-4"
+              >
                 <Link
                   to="/predict"
-                  className="inline-block bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-block w-full sm:w-auto bg-purple-700 text-white px-8 py-3 rounded-lg hover:bg-purple-800 transition duration-300 shadow-lg hover:shadow-xl"
                 >
                   Start Diagnosis
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-block bg-white text-purple-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-block w-full sm:w-auto bg-white text-purple-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition duration-300 shadow-lg hover:shadow-xl"
                 >
                   Learn More
                 </Link>
@@ -234,6 +238,7 @@ function App() {
             <Route path="/predict" element={<Predict />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             {/* Blog Routes */}
             <Route

@@ -6,7 +6,7 @@ function ContactUs() {
     <>
       <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 p-6">
         <div className="w-full max-w-2xl bg-white p-8 rounded-xl shadow-lg">
-          <h1 className="text-3xl font-bold text-purple-700 text-center mb-6">
+          <h1 className="text-3xl font-bold text-purple-700 text-center mb-6 mt-16 lg:mt-0">
             Contact Us
           </h1>
           <div className="flex flex-col md:flex-row">
