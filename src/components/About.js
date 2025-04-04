@@ -221,7 +221,7 @@ function About() {
                   Chenthura Arunesh B
                 </h3>
                 <p className="text-gray-600">
-                  Co-founder & CTO of GenHub Innovations
+                  Co-founder & COO of GenHub Innovations
                 </p>
                 <a
                   href="http://www.linkedin.com/in/chenthura-arunesh-ab2034283"
@@ -260,7 +260,7 @@ function About() {
                 <h3 className="text-2xl font-bold text-purple-700">
                   Dhivya R G
                 </h3>
-                <p className="text-gray-600">Coo of GenHub Innovations</p>
+                <p className="text-gray-600">CTO of GenHub Innovations</p>
                 <a
                   href="https://www.linkedin.com/in/dhivya-r-g-28046725b"
                   target="_blank"
