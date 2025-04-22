@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -29,12 +29,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        `${
-          process.env.REACT_APP_API_URL || "http://localhost:5000"
-        }/auth/login`,
-        formData
-      );
+      const response = await api.post("/auth/login", formData);
 
       if (response.data.success) {
         // Save token to localStorage
