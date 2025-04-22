@@ -83,10 +83,7 @@ function Footer() {
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
             {/* Privacy Policy */}
-            <Link
-              to="/privacy-policy"
-              className=" mt-4 md:mt-0 md:ml-4"
-            >
+            <Link to="/privacy-policy" className=" mt-4 md:mt-0 md:ml-4">
               Privacy Policy
             </Link>
           </div>

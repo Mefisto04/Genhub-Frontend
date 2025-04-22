@@ -17,6 +17,8 @@ import BlogDetail from "./components/BlogDetail";
 import BlogCreate from "./components/BlogCreate";
 import BlogEdit from "./components/BlogEdit";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import History from "./components/History";
+import FAQ from "./components/FAQ";
 
 function App() {
   const fadeIn = {
@@ -235,10 +237,20 @@ function App() {
               }
             />
 
+            <Route
+              path="/history"
+              element={
+                <ProtectedRoute>
+                  <History />
+                </ProtectedRoute>
+              }
+            />
+
             <Route path="/predict" element={<Predict />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/faq" element={<FAQ />} />
 
             {/* Blog Routes */}
             <Route

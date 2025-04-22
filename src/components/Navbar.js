@@ -149,7 +149,15 @@ function Navbar() {
             <div className="ml-4 flex items-center md:ml-6">
               {user ? (
                 <div className="flex items-center">
-                  <span className="text-gray-700 mr-2">Hello, {user.name}</span>
+                  <Link
+                    to="/dashboard"
+                    className="text-gray-700 mr-2 hover:text-purple-700 transition-colors flex items-center"
+                  >
+                    <span className="mr-1">Hello,</span>
+                    <span className="font-medium hover:underline">
+                      {user.name}
+                    </span>
+                  </Link>
                   {isAdmin && (
                     <>
                       <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mr-2">
